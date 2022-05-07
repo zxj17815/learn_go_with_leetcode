@@ -23,3 +23,9 @@ occupies 占有
 exponents 指数
 coefficients 系数
 respectively 分别
+emergency 应急
+rescue 救援
+several 各种
+scattered 分散的
+amount of ...的数量
+currently 当前
