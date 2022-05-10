@@ -7,14 +7,15 @@ import (
 
 func main() {
 	spell := [...]string{"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"}
-	var n, sum int
 	var s string
-	_, _ = fmt.Scanf("%d", &n)
-	s = strconv.Itoa(n)
+	var sum int
+
+	_, _ = fmt.Scanf("%s", &s)
 	for _, v := range s {
 		a, _ := strconv.Atoi(string(v))
 		sum += a
 	}
+
 	s = strconv.Itoa(sum)
 
 	index, _ := strconv.Atoi(string(s[0]))
