@@ -4,40 +4,25 @@ import "fmt"
 
 func main() {
 
-	var k int
-	var negative int
-	max := ^int(^uint(0) >> 1)
+	var k, max, sum, start, end, index int
 	_, _ = fmt.Scanf("%d", &k)
 	sub := make([]int, k)
+	max = -1
+	end = k - 1
 	for i := 0; i < k; i++ {
 		_, _ = fmt.Scanf("%d", &sub[i])
-		if sub[i] < 0 {
-			negative++
-		}
-	}
-	if negative == k {
-		fmt.Println(0, sub[0], sub[k-1])
-		return
-	}
-	if k == 1 {
-		fmt.Println(sub[0], sub[0], sub[0])
-		return
-	}
-	var sum, start, end int
-	for i := 0; i < k-1; i++ {
-		for j := i; j < k; j++ {
+		sum = sum + sub[i]
+		if sum < 0 {
 			sum = 0
-			for _, v := range sub[i : j+1] {
-				sum += v
-			}
-			if sum > max {
-				max = sum
-				start = i
-				end = j
-			}
-
+			index = i + 1
+		} else if sum > max {
+			max = sum
+			start = index
+			end = i
 		}
 	}
-
+	if max < 0 {
+		max = 0
+	}
 	fmt.Println(max, sub[start], sub[end])
 }
